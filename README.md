@@ -1,6 +1,6 @@
 # Semaphore
 
-Implementando um semáforo para estabelecer comunicação entre uma thread produtora e consumidora. Para isso, foi usado `pthread_mutex_t` e `pthread_cond_t` da biblioteca `pthreads`. A ideia é bem simples e acredito que lendo os comentários dê para ter noção de como funciona.
+Implementando um semáforo para estabelecer comunicação entre uma thread produtora e consumidora. Para isso, foi usado `pthread_mutex_t` e `pthread_cond_t` da biblioteca `pthread`. A ideia é bem simples e acredito que lendo os comentários dê para ter noção de como funciona.
 
 ## Algumas referências
 
