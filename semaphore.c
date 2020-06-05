@@ -28,7 +28,7 @@ void semaphore_wait(semaphore_t* s) {
   if(s->counter == 0)
     pthread_cond_wait(&s->cond, &s->mutex);
 
-  s->counter--; // após o sinal ser recebido, decrementa counter, significando que a solicitação foi efetuada
+  s->counter--; // após o sinal ser recebido, decrementa counter, significando que a sinal foi tratado
   pthread_mutex_unlock(&s->mutex);
 }
 
