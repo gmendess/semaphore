@@ -2,10 +2,10 @@
 #include <pthread.h>
 #include "semaphore.h"
 
-int semaphore_init(semaphore_t* s) {
+int semaphore_init(semaphore_t* s, int counter) {
   int status;
 
-  s->counter = 0;
+  s->counter = counter;
 
   // inicia a mutex e verifica por erro
   status = pthread_mutex_init(&s->mutex, NULL);
@@ -13,7 +13,7 @@ int semaphore_init(semaphore_t* s) {
     return status;
 
   // inicia a variável condicional e verifica por erros
-  pthread_cond_init(&s->cond, NULL);
+  status = pthread_cond_init(&s->cond, NULL);
   if(status != 0)
     return status;
 

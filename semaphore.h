@@ -10,7 +10,7 @@ struct semaphore {
 };
 typedef struct semaphore semaphore_t;
 
-int semaphore_init(semaphore_t* s);
+int semaphore_init(semaphore_t* s, int counter);
 void semaphore_wait(semaphore_t* s);
 void semaphore_post(semaphore_t* s);
 void semaphore_destroy(semaphore_t* s);
