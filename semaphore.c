@@ -14,8 +14,10 @@ int semaphore_init(semaphore_t* s, int counter) {
 
   // inicia a variável condicional e verifica por erros
   status = pthread_cond_init(&s->cond, NULL);
-  if(status != 0)
+  if(status != 0) {
+    pthread_mutex_destroy(&s->mutex);
     return status;
+  }
 
   return 0; // ok
 }
